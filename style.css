@@ -1,0 +1,931 @@
+/* VARIÁVEIS DE CORES E FONTES */
+:root {
+    --primary: #1a1a1a;
+    --secondary: #333333;
+    --accent: #bda27e;
+    /* Dourado/Nude elegante */
+    --bg-light: #f9f8f6;
+    --white: #ffffff;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: auto;
+    /* O JS controla a rolagem */
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--secondary);
+    line-height: 1.6;
+    background-color: var(--white);
+
+    /* A SOLUÇÃO MÁGICA PARA A BARRA BRANCA */
+    overflow-x: clip;
+    /* Corta o que vaza, mas NÃO quebra o sticky! */
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* UTILIDADES */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary);
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+/* BOTÕES */
+.btn-primary,
+.btn-outline,
+.btn-whatsapp {
+    display: inline-block;
+    padding: 12px 28px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: var(--white);
+    border: 1px solid var(--accent);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--accent);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--white);
+    border: 1px solid var(--white);
+}
+
+.btn-outline:hover {
+    background-color: var(--white);
+    color: var(--primary);
+}
+
+.btn-whatsapp {
+    background-color: #25D366;
+    color: var(--white);
+    border: 1px solid #25D366;
+    font-weight: bold;
+    /* Usa Flexbox para alinhar o ícone e o texto perfeitamente */
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    white-space: nowrap;
+    /* Proíbe o botão de quebrar em várias linhas e ficar quadrado */
+}
+
+.btn-whatsapp:hover {
+    background-color: transparent;
+    color: #25D366;
+}
+
+/* NAVEGAÇÃO */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.4s ease;
+    background-color: transparent;
+    color: var(--white);
+}
+
+.navbar.scrolled {
+    background-color: var(--primary);
+    padding: 15px 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo a {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+/* ÍCONES SOCIAIS NO MENU (DESKTOP) */
+.menu-social {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding-left: 15px;
+    /* Espaço antes da linha */
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    /* Linha divisória elegante */
+}
+
+.menu-social a {
+    font-size: 1.2rem !important;
+    /* Deixa o ícone maior que o texto do menu */
+    text-transform: none !important;
+}
+
+/* OCULTAR ELEMENTOS MOBILE NO DESKTOP */
+.logo-mobile {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.close-menu {
+    display: none;
+}
+
+.btn-agendar-mobile {
+    display: inline-block;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* ANIMAÇÃO SLIDESHOW HERO */
+.hero-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    /* Fica atrás da película escura (-1) */
+    list-style: none;
+}
+
+.hero-slideshow li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    /* Ciclo total de 40s (5 imagens x 8s cada) */
+    animation: heroFade 40s linear infinite;
+}
+
+.hero-slideshow li img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Atrasos matemáticos para cada imagem (De 8 em 8 segundos) */
+.hero-slideshow li:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.hero-slideshow li:nth-child(2) {
+    animation-delay: 8s;
+}
+
+.hero-slideshow li:nth-child(3) {
+    animation-delay: 16s;
+}
+
+.hero-slideshow li:nth-child(4) {
+    animation-delay: 24s;
+}
+
+.hero-slideshow li:nth-child(5) {
+    animation-delay: 32s;
+}
+
+/* * LÓGICA DO KEYFRAME PARA 5 IMAGENS:
+ * 0% a 5%: Fade In (Aparece)
+ * 5% a 20%: Fica visível e vai dando um zoom suave
+ * 20% a 25%: Fade Out (Vai sumindo enquanto a próxima aparece)
+ * 25% a 100%: Fica invisível esperando o próximo ciclo
+ */
+@keyframes heroFade {
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    5% {
+        opacity: 1;
+        transform: scale(1.02);
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+
+    25% {
+        opacity: 0;
+        transform: scale(1.06);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    /* Película escura */
+    z-index: -1;
+}
+
+.hero-content {
+    color: var(--white);
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    letter-spacing: 1px;
+}
+
+/* PORTFÓLIO E SERVIÇOS (Grid Editorial) */
+.grid-editorial {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-items: center;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.texto-item {
+    padding: 40px;
+    background-color: var(--bg-light);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.texto-item h3 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.foto-large {
+    grid-row: span 2;
+}
+
+/* SOBRE */
+.flex-sobre {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.sobre-img {
+    flex: 1;
+}
+
+.sobre-img img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.sobre-texto {
+    flex: 1;
+}
+
+.sobre-texto h2 {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.sobre-texto p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* CONTATO */
+.contato-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.contato-info {
+    background-color: var(--bg-light);
+    padding: 40px;
+}
+
+.contato-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+/* AJUSTES PARA O QUADRO DO CALENDLY NÃO VAZAR */
+.contato-calendly {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Garante que a coluna acompanhe a altura da coluna da esquerda */
+}
+
+.calendly-placeholder {
+    border: 2px dashed #ccc;
+    padding: 60px 20px;
+    text-align: center;
+    flex: 1;
+    /* A Mágica: Substitui o height: 100% e preenche apenas o espaço exato que sobra */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fafafa;
+    border-radius: 4px;
+    /* Um arredondamento leve para ficar mais chique */
+}
+
+/* AJUSTES DA SEÇÃO DE CONTATO */
+.politicas-agendamento {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #ddd;
+}
+
+.politicas-agendamento h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.politicas-agendamento ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.politicas-agendamento ul li {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.politicas-agendamento ul li::before {
+    content: '•';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* ==========================================
+   FOOTER DEFINITIVO (CENTRALIZADO E COMPRIMIDO)
+   ========================================== */
+footer {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 20px 15px;
+    /* Reduzimos o respiro gigante de 40px para apenas 20px */
+}
+
+.footer-centralizado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 8px;
+    /* Reduzimos o espaço entre as linhas de 20px para 8px */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-centralizado p {
+    text-align: center;
+    margin: 0;
+    line-height: 1.4;
+    /* Diminuímos a altura da linha */
+    font-size: 0.9rem;
+}
+
+/* Estilo para os créditos do desenvolvedor no rodapé */
+.dev-credits {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+    display: inline-block;
+    font-size: 0.85rem;
+    /* Fonte levemente menor para dar hierarquia */
+    margin-top: 0;
+    /* Removemos a margem extra que estava "esticando" o bloco */
+}
+
+.dev-credits:hover {
+    color: var(--accent);
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 8px;
+    /* Dá apenas um leve afastamento dos textos */
+}
+
+.social-links a {
+    color: var(--white);
+    font-size: 1.2rem;
+    /* Ícones um pouquinho menores para acompanhar a compressão */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+    transform: translateY(-3px);
+}
+
+/* ==========================================
+   ANIMAÇÕES DE ENTRADA INTELIGENTES (DIRECIONAIS)
+   ========================================== */
+
+/* Base da animação para todos os elementos */
+.reveal,
+.reveal-h {
+    opacity: 0;
+    transition: all 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 1. SE O USUÁRIO ESTÁ ROLANDO PARA BAIXO */
+/* Vertical: Vem de baixo | Horizontal: Vem da direita */
+body.scrolling-down .reveal:not(.active) {
+    transform: translateY(60px);
+}
+
+body.scrolling-down .reveal-h:not(.active) {
+    transform: translateX(80px) scale(0.95);
+}
+
+/* 2. SE O USUÁRIO ESTÁ ROLANDO PARA CIMA */
+/* Vertical: Vem de cima | Horizontal: Vem da esquerda */
+body.scrolling-up .reveal:not(.active) {
+    transform: translateY(-60px);
+}
+
+body.scrolling-up .reveal-h:not(.active) {
+    transform: translateX(-80px) scale(0.95);
+}
+
+/* 3. O DESTINO FINAL (O elemento se encaixa no lugar original) */
+.reveal.active,
+.reveal-h.active {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) !important;
+}
+
+/* BOTÃO DE AGENDAR NO MENU (Super Destaque) */
+.btn-destaque {
+    background-color: var(--accent);
+    /* Cor Dourada/Nude */
+    color: var(--white) !important;
+    padding: 12px 30px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    box-shadow: 0 4px 15px rgba(189, 162, 126, 0.4);
+    transition: all 0.3s ease;
+}
+
+.btn-destaque:hover {
+    background-color: var(--white);
+    color: var(--primary) !important;
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* EFEITO DE LUZ (LANTERNA) NO MOUSE */
+#mouse-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    /* Deixa você clicar nas coisas através da luz */
+    z-index: 9998;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0), transparent 0%);
+}
+
+/* ROLAGEM MÁGICA + ESTILO HEG (Tamanhos Variados) */
+.portfolio-section {
+    height: 400vh;
+    /* Cria espaço de rolagem (4x a altura da tela) */
+    position: relative;
+    background-color: var(--primary);
+}
+
+.portfolio-section .section-title {
+    color: var(--white);
+    padding-top: 40px;
+    padding-left: 40px;
+    text-align: left;
+    /* Título alinhado à esquerda fica mais moderno */
+}
+
+.sticky-container {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    /* Trava a tela na altura do monitor */
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.portfolio-track {
+    display: flex;
+    gap: 30px;
+    padding: 0 40px;
+    width: max-content;
+    will-change: transform;
+    height: 65vh;
+    /* Altura total da área das fotos */
+}
+
+/* Colunas de tamanhos diferentes (O Estilo HEG horizontal) */
+.track-col {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    height: 100%;
+}
+
+.col-large {
+    width: 45vw;
+}
+
+.col-tall {
+    width: 30vw;
+}
+
+.col-medium {
+    width: 35vw;
+}
+
+.col-wide {
+    width: 55vw;
+}
+
+/* Foto panorâmica */
+.col-small {
+    width: 25vw;
+}
+
+/* Itens dentro das colunas */
+.item-texto {
+    background-color: #222;
+    padding: 30px;
+    border-radius: 4px;
+    color: var(--white);
+    flex: 1;
+    /* Ocupa o espaço disponível */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.item-texto h3 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.foto-item {
+    flex: 1;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.h-100 {
+    flex: none;
+    height: 100%;
+    /* Força o item a ocupar toda a altura da coluna */
+}
+
+.foto-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.6s ease, transform 0.6s ease;
+}
+
+.foto-item:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   OTIMIZAÇÃO PARA TELAS GIGANTES (4K NATIVO / ULTRAWIDE)
+   ========================================== */
+@media (min-width: 1921px) {
+    html {
+        /* O padrão é 100% (16px). 
+           Aumentando para 150% (aprox 21px), tudo que usa 'rem' cresce proporcionalmente! */
+        font-size: 130%;
+    }
+
+    /* Aumenta o container para não ficar um "palito" no meio de uma tela imensa */
+    .container {
+        max-width: 1400px;
+    }
+
+    /* Ajuste para a grade do portfólio não ficar esticada demais */
+    .portfolio-track .item {
+        height: 50vh;
+        /* Reduz um pouco a altura relativa para compensar a largura extrema */
+    }
+}
+
+/* Se for um monitor 4K ultra gigante (acima de 2560px) */
+@media (min-width: 2560px) {
+    html {
+        font-size: 160%;
+        /* Aumenta ainda mais o zoom geral */
+    }
+
+    .container {
+        max-width: 1800px;
+    }
+}
+
+/* RESPONSIVIDADE (CELULAR E TABLET) */
+@media (max-width: 768px) {
+
+    /* ==========================================
+           NOVO MENU MOBILE (MINIMALISTA E TRANSPARENTE)
+           ========================================== */
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: row;
+        /* Mantém os itens na mesma linha */
+        justify-content: space-between;
+        align-items: center;
+        background-color: transparent;
+        /* Volta a ser transparente no topo! */
+    }
+
+    .navbar.scrolled {
+        background-color: var(--primary);
+        /* Fica preto apenas ao rolar */
+        padding: 10px 20px;
+        /* Encolhe levemente para ficar delicado */
+    }
+
+    .logo-desktop {
+        display: none;
+    }
+
+    /* Esconde o nome completo */
+
+    .logo-mobile {
+        display: block;
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+    }
+
+    /* Botão central em miniatura */
+    .btn-agendar-mobile {
+        padding: 8px 14px;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+        margin: 0 auto;
+        /* Empurra para o centro */
+    }
+
+    /* O ícone do Hambúrguer */
+    .menu-toggle {
+        display: block;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--white);
+    }
+
+    /* A Gaveta Lateral Oculta */
+    #nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        /* Começa escondido fora da tela */
+        width: 250px;
+        height: 100vh;
+        background-color: var(--primary);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        /* Animação suave */
+        z-index: 1001;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Classe que o JS vai adicionar para mostrar a gaveta */
+    #nav-menu.active {
+        right: 0;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+
+    /* AJUSTE DOS ÍCONES SOCIAIS NO MOBILE */
+    .menu-social {
+        border-left: none;
+        /* Remove a linha divisória */
+        padding-left: 0;
+        margin-top: 15px;
+        /* Dá um espacinho extra abaixo do "Contato" */
+        justify-content: center;
+        /* Centraliza os ícones */
+        gap: 25px;
+    }
+
+    .menu-social a {
+        font-size: 1.6rem !important;
+        /* Ícones bem grandes e clicáveis no celular */
+    }
+
+    /* O botão de fechar a gaveta (X) */
+    .close-menu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        font-size: 2rem;
+        cursor: pointer;
+        color: var(--white);
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    /* REDEFININDO A PROPORÇÃO DO PORTFÓLIO NO MOBILE */
+    .portfolio-track {
+        height: 55vh;
+        /* Diminui a altura de 65vh para 55vh para não ficar esticado verticalmente */
+        padding: 0 20px;
+        /* Encolhe o espaço vazio antes da primeira foto */
+    }
+
+    .col-large,
+    .col-tall,
+    .col-medium,
+    .col-wide,
+    .col-small {
+        width: 85vw;
+        /* Devolve a largura generosa, deixando 15vw de "espiada" na próxima foto */
+    }
+
+    .portfolio-section .section-title {
+        padding-left: 20px;
+        /* Reduz padding lateral no título no celular */
+        font-size: 2rem;
+    }
+
+    /* Ajustes Gerais para não vazar */
+    .container {
+        padding: 0 15px;
+    }
+
+    /* AJUSTES PARA A SEÇÃO SOBRE E CONTATO NO MOBILE */
+    .flex-sobre {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contato-grid {
+        grid-template-columns: 1fr;
+        /* Força 1 coluna apenas no mobile */
+        gap: 40px;
+    }
+
+    /* Manda o Calendly para cima e o Mapa/Endereço para baixo no celular */
+    .contato-calendly {
+        order: -1;
+    }
+
+    .contato-info {
+        order: 1;
+    }
+
+    .foto-large {
+        grid-row: auto;
+    }
+
+    .foto-large {
+        grid-row: auto;
+    }
+}

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Otimização Básico -->
+    <title>Micaela Schumann | Hair Stylist & Visagista em Caxias do Sul</title>
+    <meta name="description"
+        content="Micaela Schumann é especialista em colorimetria, mechas e visagismo. Transforme seu visual em nosso salão na Esplanada, Caxias do Sul - RS. Agende seu horário.">
+    <meta name="keywords"
+        content="Cabeleireira, Caxias do Sul, Mechas, Visagismo, Corte de Cabelo, Salão de Beleza, Micaela Schumann, Esplanada, Escova Progressiva, Loiros, Morena Iluminada">
+    <meta name="author" content="Micaela Schumann">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://micaelaschumann.com.br/">
+
+    <!-- Theme Color para Mobile -->
+    <meta name="theme-color" content="#1a1a1a">
+
+    <!-- Ícones e Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Open Graph (Compartilhamento WhatsApp/Facebook) -->
+    <meta property="og:title" content="Micaela Schumann | Hair Stylist em Caxias do Sul">
+    <meta property="og:description"
+        content="Arte, Beleza e Autenticidade. Agende sua transformação e revele sua melhor versão.">
+    <meta property="og:image" content="https://micaelaschumann.com.br/img/og-image.jpg">
+    <meta property="og:url" content="https://micaelaschumann.com.br/">
+    <meta property="og:type" content="website">
+
+    <!-- DADOS ESTRUTURADOS (Schema.org) PARA O GOOGLE -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HairSalon",
+      "name": "Micaela Schumann",
+      "image": "https://micaelaschumann.com.br/img/og-image.jpg",
+      "@id": "https://micaelaschumann.com.br/",
+      "url": "https://micaelaschumann.com.br/",
+      "telephone": "+5554991938613",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "R. Primo Postali, 1342",
+        "addressLocality": "Esplanada, Caxias do Sul",
+        "addressRegion": "RS",
+        "postalCode": "95096-500",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -29.192973,
+        "longitude": -51.200016
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      "sameAs": [
+        "https://www.instagram.com/schumannmicaela",
+        "https://www.facebook.com/SEU_FACEBOOK"
+      ]
+    }
+    </script>
+
+    <!-- Fontes Elegantes e Ícones -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- CURSOR CUSTOMIZADO -->
+    <div id="mouse-glow"></div>
+
+    <!-- NAVEGAÇÃO FIXA -->
+    <header class="navbar" id="navbar">
+        <div class="logo">
+            <a href="#hero">
+                <span class="logo-desktop">MICAELA SCHUMANN</span>
+                <span class="logo-mobile">MS</span>
+            </a>
+        </div>
+
+        <!-- Botão centralizado apenas no Mobile -->
+        <a href="#contato" class="btn-outline btn-agendar-mobile">Agendar Horário</a>
+
+        <!-- Ícone do Menu Hambúrguer -->
+        <div class="menu-toggle" id="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Menu Lateral Oculto -->
+        <nav id="nav-menu">
+            <!-- Botão de Fechar dentro do menu -->
+            <div class="close-menu" id="close-menu-btn">
+                <i class="fas fa-times"></i>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#servicos">Portfólio</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+
+                <!-- REDES SOCIAIS NO MENU -->
+                <li class="menu-social">
+                    <a href="https://www.instagram.com/schumannmicaela" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 1. HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="hero-overlay"></div>
+
+        <ul class="hero-slideshow" id="hero-slideshow">
+            <li><img src="https://images.unsplash.com/photo-1673465766620-1f336d434bff?w=1920&q=80" alt="Hero 1"></li>
+            <li><img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1920&q=80" alt="Hero 2"></li>
+            <li><img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1920&q=80" alt="Hero 3"></li>
+            <li><img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1920&q=80" alt="Hero 4"></li>
+            <li><img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1920&q=80" alt="Hero 5"></li>
+        </ul>
+
+        <div class="hero-content reveal">
+            <h1>Sua nova assinatura de beleza</h1>
+            <p>Visagismo, cor e corte pensados exclusivamente para você.</p>
+            <a href="#contato" class="btn-primary">Reserve seu momento</a>
+        </div>
+    </section>
+
+    <!-- 2. SERVIÇOS E PORTFÓLIO (Rolagem Horizontal) -->
+    <section id="servicos" class="portfolio-section">
+        <div class="sticky-container">
+            <h2 class="section-title">Serviços & Portfólio</h2>
+
+            <div class="portfolio-track" id="portfolio-track">
+
+                <div class="track-col col-medium">
+                    <div class="item-texto reveal-h">
+                        <h3>Coloração & Mechas</h3>
+                        <p>Técnicas de colorimetria avançada para loiros saudáveis, morenas iluminadas e cores
+                            autênticas.
+                        </p>
+                    </div>
+                    <div class="foto-item reveal-h">
+                        <img src="https://images.unsplash.com/photo-1673465766620-1f336d434bff?w=800&q=80"
+                            alt="Mechas 1">
+                    </div>
+                </div>
+
+                <div class="track-col col-tall">
+                    <div class="foto-item reveal-h h-100">
+                        <img src="https://images.unsplash.com/photo-1560869713-bf165a9cfac1?w=800&q=80" alt="Mechas 2">
+                    </div>
+                </div>
+
+                <div class="track-col col-large">
+                    <div class="foto-item reveal-h h-100">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1000&q=80"
+                            alt="Mechas 3">
+                    </div>
+                </div>
+
+                <div class="track-col col-medium">
+                    <div class="foto-item reveal-h">
+                        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=800&q=80"
+                            alt="Corte 1">
+                    </div>
+                    <div class="item-texto reveal-h">
+                        <h3>Visagismo & Corte</h3>
+                        <p>Leitura de linhas e formas para esculpir o corte que revela a sua melhor versão.</p>
+                    </div>
+                </div>
+
+                <div class="track-col col-small">
+                    <div class="foto-item reveal-h h-100">
+                        <img src="https://images.unsplash.com/photo-1599305090598-fe179d501227?w=600&q=80"
+                            alt="Corte 2">
+                    </div>
+                </div>
+
+                <div class="track-col col-tall">
+                    <div class="foto-item reveal-h h-100">
+                        <img src="https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=800&q=80"
+                            alt="Corte 3">
+                    </div>
+                </div>
+
+                <div class="track-col col-wide">
+                    <div class="foto-item reveal-h h-100">
+                        <img src="https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=1200&q=80"
+                            alt="Liso 1">
+                    </div>
+                </div>
+
+                <div class="track-col col-medium">
+                    <div class="item-texto reveal-h">
+                        <h3>Escova & Alinhamento</h3>
+                        <p>Fios alinhados, brilho espelhado e movimento natural com alta tecnologia anti-frizz.</p>
+                    </div>
+                    <div class="foto-item reveal-h">
+                        <img src="https://images.unsplash.com/photo-1700760934268-8aa0ef52ce0a?w=800&q=80" alt="Liso 2">
+                    </div>
+                </div>
+
+                <div class="track-col col-tall">
+                    <div class="foto-item reveal-h h-100">
+                        <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=800&q=80" alt="Liso 3">
+                    </div>
+                </div>
+
+                <div class="track-col col-large">
+                    <div class="foto-item reveal-h h-100">
+                        <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1000&q=80"
+                            alt="Terapia 1">
+                    </div>
+                </div>
+
+                <div class="track-col col-small">
+                    <div class="item-texto reveal-h h-100">
+                        <h3>Terapia Capilar</h3>
+                        <p>Tratamentos profundos e cronograma capilar para restaurar a saúde de dentro para fora.</p>
+                    </div>
+                </div>
+
+                <div class="track-col col-tall">
+                    <div class="foto-item reveal-h h-100">
+                        <img src="https://images.unsplash.com/photo-1595959183082-7b570b7e08e2?w=800&q=80"
+                            alt="Terapia 2">
+                    </div>
+                </div>
+
+                <div class="track-col col-medium">
+                    <div class="foto-item reveal-h">
+                        <img src="https://images.unsplash.com/photo-1715725500996-4c2a5e8f9e8a?w=800&q=80"
+                            alt="Terapia 3">
+                    </div>
+                    <div class="foto-item reveal-h">
+                        <img src="https://images.unsplash.com/photo-1707979577466-2d6109c68a45?w=800&q=80"
+                            alt="Terapia 4">
+                    </div>
+                </div>
+
+                <div class="track-col col-medium">
+                    <div class="item-texto reveal-h">
+                        <h3>Penteados & Eventos</h3>
+                        <p>Produções impecáveis para noivas, formandas e convidadas. Fixação e elegância duradouras.</p>
+                    </div>
+                    <div class="foto-item reveal-h">
+                        <img src="https://images.unsplash.com/photo-1757866332364-1de5a8c2575d?w=800&q=80"
+                            alt="Penteado 1">
+                    </div>
+                </div>
+
+                <div class="track-col col-tall">
+                    <div class="foto-item reveal-h h-100">
+                        <img src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?w=800&q=80"
+                            alt="Penteado 2">
+                    </div>
+                </div>
+
+                <div class="track-col col-wide">
+                    <div class="foto-item reveal-h h-100">
+                        <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?w=1200&q=80"
+                            alt="Penteado 3">
+                    </div>
+                </div>
+
+                <div class="track-col col-small">
+                    <div class="item-texto reveal-h h-100">
+                        <h3>Mega Hair</h3>
+                        <p>Extensões invisíveis e naturais para dar volume e comprimento dos sonhos.</p>
+                    </div>
+                </div>
+
+                <div class="track-col col-tall">
+                    <div class="foto-item reveal-h h-100">
+                        <img src="https://images.unsplash.com/photo-1619218533116-f050e7d91d91?w=800&q=80"
+                            alt="Mega Hair 1">
+                    </div>
+                </div>
+
+                <div class="track-col col-large">
+                    <div class="foto-item reveal-h h-100">
+                        <img src="https://images.unsplash.com/photo-1564141696939-9eb6e957ccfc?w=1000&q=80"
+                            alt="Mega Hair 2">
+                    </div>
+                </div>
+
+                <div class="track-col col-medium">
+                    <div class="foto-item reveal-h h-100">
+                        <img src="https://images.unsplash.com/photo-1512084747998-038941f49b84?w=800&q=80"
+                            alt="Mega Hair 3">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SOBRE -->
+    <section id="sobre" class="section bg-light">
+        <div class="container flex-sobre">
+            <div class="sobre-img reveal">
+                <!-- Placeholder para a foto da Micaela -->
+                <img src="https://images.unsplash.com/photo-1595959183082-7b570b7e08e2?w=600&q=80"
+                    alt="Micaela Schumann">
+            </div>
+            <div class="sobre-texto reveal">
+                <h2>Muito prazer, sou a Micaela.</h2>
+                <p>Acredito que o cabelo é a moldura do rosto e a expressão mais forte da nossa identidade. Com anos de
+                    dedicação à arte de cuidar de cabelos, meu foco é entregar resultados sofisticados e, acima de tudo,
+                    saudáveis.</p>
+                <p>No meu espaço, você não encontra apenas um serviço, mas uma experiência de autocuidado e renovação.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. CONTATO E AGENDAMENTO -->
+    <section id="contato" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title reveal">Agendamento & Localização</h2>
+
+            <div class="contato-grid">
+
+                <div class="contato-info reveal">
+                    <h3>Onde me encontrar</h3>
+                    <p>Nosso espaço foi pensado para oferecer conforto, privacidade e uma experiência única de
+                        autocuidado.
+                    </p>
+
+                    <p class="mt-2">Enquanto isso, agende diretamente comigo:</p>
+                    <a href="https://wa.me/5554991938613" target="_blank" class="btn-whatsapp mt-2">
+                        <i class="fab fa-whatsapp"></i> (54) 99193-8613
+                    </a>
+
+                    <p class="mt-2">
+                        <i class="fas fa-map-marker-alt"
+                            style="color: var(--accent); margin-right: 8px; font-size: 1.2rem;"></i>
+                        <strong>R. Primo Postali, 1342 - Esplanada</strong><br>
+                        Caxias do Sul - RS, 95096-500
+                    </p>
+
+                    <div class="map-container mt-2">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3483.0391807766573!2d-51.20001612343827!3d-29.19297337536347!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951ea343b5e05cfb%3A0xfbb310c994e51ab0!2sR.%20Primo%20Postali%2C%201342%20-%20Esplanada%2C%20Caxias%20do%20Sul%20-%20RS%2C%2095096-500!5e0!3m2!1spt-BR!2sbr!4v1780536824991!5m2!1spt-BR!2sbr"
+                            width="100%" height="250" style="border:0; border-radius: 4px;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                    <div class="politicas-agendamento mt-2">
+                        <h3>Política de Atendimento</h3>
+                        <ul>
+                            <li>Orçamentos para mechas e colorações são realizados mediante avaliação presencial e teste
+                                de
+                                mecha.</li>
+                            <li>Trabalhamos com horários exclusivos para garantir total dedicação ao seu cabelo.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="contato-calendly reveal">
+                    <h3>Reserve seu Horário</h3>
+                    <p>Escolha o serviço desejado, a melhor data e horário para você diretamente em nossa agenda
+                        virtual.
+                    </p>
+
+                    <div class="calendly-placeholder mt-2">
+                        <i class="far fa-calendar-check"
+                            style="font-size: 3rem; color: var(--accent); margin-bottom: 15px;"></i>
+                        <h4>Agenda Virtual</h4>
+                        <p>O sistema de agendamento automático estará disponível em breve.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-centralizado">
+            <p>&copy; 2026 Micaela Schumann. ❤️ Todos os direitos reservados.</p>
+            <a href="https://hacerfak.com.br" target="_blank" class="dev-credits"
+                title="Visitar Eder Gross Cichelero">Feito por
+                Eder Gross Cichelero</a>
+
+            <div class="social-links">
+                <a href="https://www.instagram.com/schumannmicaela" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
