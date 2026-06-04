@@ -193,8 +193,4 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('.reveal, .reveal-h').forEach((el) => {
         observer.observe(el);
     });
-
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll();
-
 });
