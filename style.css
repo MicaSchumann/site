@@ -533,41 +533,29 @@ footer {
 }
 
 /* ==========================================
-   ANIMAÇÕES DE ENTRADA INTELIGENTES (DIRECIONAIS)
+   ANIMAÇÕES DE ENTRADA (APENAS VERTICAL)
    ========================================== */
 
-/* Base da animação para todos os elementos */
-.reveal,
-.reveal-h {
+/* Base da animação para os elementos */
+.reveal {
     opacity: 0;
     transition: all 0.9s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* 1. SE O USUÁRIO ESTÁ ROLANDO PARA BAIXO */
-/* Vertical: Vem de baixo | Horizontal: Vem da direita */
 body.scrolling-down .reveal:not(.active) {
     transform: translateY(60px);
 }
 
-body.scrolling-down .reveal-h:not(.active) {
-    transform: translateX(80px) scale(0.95);
-}
-
 /* 2. SE O USUÁRIO ESTÁ ROLANDO PARA CIMA */
-/* Vertical: Vem de cima | Horizontal: Vem da esquerda */
 body.scrolling-up .reveal:not(.active) {
     transform: translateY(-60px);
 }
 
-body.scrolling-up .reveal-h:not(.active) {
-    transform: translateX(-80px) scale(0.95);
-}
-
 /* 3. O DESTINO FINAL (O elemento se encaixa no lugar original) */
-.reveal.active,
-.reveal-h.active {
+.reveal.active {
     opacity: 1;
-    transform: translate(0, 0) scale(1) !important;
+    transform: translateY(0) scale(1) !important;
 }
 
 /* BOTÃO DE AGENDAR NO MENU (Super Destaque) */

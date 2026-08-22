@@ -166,12 +166,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 7. SCROLL REVEAL ANIMATION (Intersection Observer Responsivo)
-
-    // Calcula a margem dinamicamente:
-    // Se for celular (tela menor que 768px), usa margem menor (-10%)
-    // Se for desktop, usa margem maior (-20%)
-    const margemLateral = window.innerWidth <= 768 ? "-1%" : "-20%";
+    // 7. SCROLL REVEAL ANIMATION (Apenas Vertical)
+    const margemLateral = window.innerWidth <= 768 ? "-10%" : "-20%";
     const rootMarginValor = `0px ${margemLateral} 0px ${margemLateral}`;
 
     const observerOptions = {
@@ -190,7 +186,8 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }, observerOptions);
 
-    document.querySelectorAll('.reveal, .reveal-h').forEach((el) => {
+    // Agora o JavaScript vigia APENAS os elementos com a classe .reveal
+    document.querySelectorAll('.reveal').forEach((el) => {
         observer.observe(el);
     });
 });
